@@ -49,7 +49,14 @@
             />
     </RadioGroup>
 
-
-
+    <ImageView
+        android:id="@+id/iv_main_ask"
+        android:layout_above="@+id/ll_buttonw"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@mipmap/ask"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 
 </RelativeLayout>

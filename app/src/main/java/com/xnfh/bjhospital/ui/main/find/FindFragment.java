@@ -29,13 +29,8 @@ public class FindFragment extends BaseFragment<FindPresenter,FindModel> {
     @BindView(R.id.viewpager_main)
     ViewPager viewpager_main;
 
-    private RecommendFragment recommendFragment;
-    private HotFragment hotFragment;
-    private CurrentUpdateFragment currentUpdateFragment;
-
-
-//    private Fragment[] fragments = {new RecommendFragment(),new HotFragment(),new CurrentUpdateFragment()};
     private ViewPagerAdapter adapter;
+    private List<Fragment> fragmentList;
 
     @Override
     protected int getLayoutResource() {
@@ -49,19 +44,24 @@ public class FindFragment extends BaseFragment<FindPresenter,FindModel> {
 
     @Override
     protected void initView() {
-        List<Fragment> fragmentList = new ArrayList<>();
-        recommendFragment = new RecommendFragment();
-        hotFragment = new HotFragment();
-        currentUpdateFragment = new CurrentUpdateFragment();
+        if(fragmentList == null) {
+            fragmentList = new ArrayList<>();
+            fragmentList.add(new RecommendFragment());
+            fragmentList.add(new HotFragment());
+            fragmentList.add(new CurrentUpdateFragment());
+        }
 
-        fragmentList.add(recommendFragment);
-        fragmentList.add(hotFragment);
-        fragmentList.add(currentUpdateFragment);
+        if(adapter == null) {
+            adapter = new ViewPagerAdapter(getChildFragmentManager(),fragmentList);
+        }
 
-        adapter = new ViewPagerAdapter(getChildFragmentManager(),fragmentList);
-        viewpager_main.setAdapter(adapter);
-        tab_layout.setupWithViewPager(viewpager_main);  //关联TabLayout和ViewPager
-        tab_layout.setTabsFromPagerAdapter(adapter);
+        if(viewpager_main.getAdapter() == null) {
+            viewpager_main.setAdapter(adapter);
+
+            tab_layout.setupWithViewPager(viewpager_main);  //关联TabLayout和ViewPager
+            tab_layout.setTabsFromPagerAdapter(adapter);
+        }
+
     }
 
     @Override

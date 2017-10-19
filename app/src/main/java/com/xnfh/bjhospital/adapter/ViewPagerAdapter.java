@@ -38,4 +38,14 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
         return titleTabs[position];
     }
+
+    @Override
+    public void finishUpdate(ViewGroup container) {
+        try {
+            super.finishUpdate(container);
+        }catch (NullPointerException nullPointException) {
+
+        }
+
+    }
 }
