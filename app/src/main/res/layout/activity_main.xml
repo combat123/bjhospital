@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
+    <include
+        android:id="@+id/include_title"
+        layout="@layout/item_titlebar"/>
+    <FrameLayout
+        android:layout_below="@+id/include_title"
+        android:layout_above="@+id/ll_buttonw"
+        android:id="@+id/fl_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/ll_buttonw"
+        android:background="#FFF"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <RadioButton
+            style="@style/Button_style"
+            android:id="@+id/btn_find"
+            android:text="发现"
+            android:checked="true"
+            android:textColor="@color/main_select_text"
+            android:drawableTop="@drawable/main_select_findimage"
+            />
+        <RadioButton
+            style="@style/Button_style"
+            android:id="@+id/btn_classify"
+            android:text="分类"
+            android:textColor="@color/main_select_text"
+            android:drawableTop="@drawable/main_select_sortimage"
+            />
+        <RadioButton
+            style="@style/Button_style"
+            android:id="@+id/btn_mine"
+            android:text="我"
+            android:textColor="@color/main_select_text"
+            android:drawableTop="@drawable/main_select_meimage"
+            />
+    </RadioGroup>
+
+
+
+
+</RelativeLayout>
