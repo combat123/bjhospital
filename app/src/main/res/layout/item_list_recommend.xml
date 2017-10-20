@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="80dp">
+
+    <com.xnfh.bjhospital.weight.CircleImageView
+        android:id="@+id/circleImg"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginLeft="30dp"
+        android:layout_centerVertical="true"
+        android:layout_height="40dp"
+        android:layout_width="40dp"/>
+
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_name"
+        android:layout_marginLeft="15dp"
+        android:textColor="#000"
+        android:text="名字:"
+        android:textSize="15sp"
+        android:layout_toRightOf="@+id/circleImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_name_in"
+        android:text="张三"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        android:layout_toRightOf="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_describe"
+        android:text="性状:"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:layout_below="@+id/tv_name"
+        android:layout_toRightOf="@+id/circleImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_describe_in"
+        android:text="性状秒时撒旦法撒旦法"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_below="@+id/tv_name"
+        android:layout_toRightOf="@+id/tv_describe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
