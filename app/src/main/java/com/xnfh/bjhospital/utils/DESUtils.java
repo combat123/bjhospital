@@ -1,8 +1,6 @@
 package com.xnfh.bjhospital.utils;
 
 import android.text.TextUtils;
-
-
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.SecretKey;
@@ -23,6 +21,11 @@ public class DESUtils {
     private static String ivKey = "227ED732";
 
 
+    /**
+     * 加密方法
+     * @param originalStr
+     * @return
+     */
     public static String encrypt(String originalStr) {
         String result = null;
         byte[] tmpOriginalStr;
@@ -49,8 +52,11 @@ public class DESUtils {
     }
 
 
-
-
+    /**
+     * 解密方法
+     * @param encrypStr
+     * @return
+     */
     public static String decrypt(String encrypStr) {
         String result = null;
         byte[] tmpEncrypStr ;

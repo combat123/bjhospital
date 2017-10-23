@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp">
         <ImageView
+            android:id="@+id/iv_back"
             android:layout_centerVertical="true"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
@@ -21,7 +22,6 @@
             android:layout_height="wrap_content"/>
         <ImageView
             android:id="@+id/iv_main_search"
-            android:src="@mipmap/select"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"

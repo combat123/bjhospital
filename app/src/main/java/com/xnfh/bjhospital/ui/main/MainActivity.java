@@ -3,6 +3,7 @@ package com.xnfh.bjhospital.ui.main;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +14,8 @@ import com.xnfh.bjhospital.R;
 import com.xnfh.bjhospital.base.BaseActivity;
 import com.xnfh.bjhospital.ui.main.Classify.ClassifyFragment;
 import com.xnfh.bjhospital.ui.main.find.FindFragment;
+import com.xnfh.bjhospital.ui.main.login.LoginActivity;
+import com.xnfh.bjhospital.utils.SharePrefUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -57,6 +60,7 @@ public class MainActivity extends BaseActivity {
         classifyFragment = new ClassifyFragment();
 
         tv_main_title.setText("发现");
+        iv_main_search.setImageResource(R.mipmap.select);
         supportFragmentManager.beginTransaction().add(R.id.fl_body,findFragment).commit();
         supportFragmentManager.beginTransaction().add(R.id.fl_body,classifyFragment).commit();
         supportFragmentManager.beginTransaction().hide(classifyFragment).show(findFragment).commit();
@@ -79,7 +83,10 @@ public class MainActivity extends BaseActivity {
 
                 break;
             case R.id.btn_mine:     //我的页面
-
+                String session = SharePrefUtil.getInstance(this).getStringData("session");
+                if("".equals(session)) {
+                    startActivity(new Intent(this,LoginActivity.class));
+                }
                 break;
             case R.id.iv_main_search:       //标题栏搜索按钮
 

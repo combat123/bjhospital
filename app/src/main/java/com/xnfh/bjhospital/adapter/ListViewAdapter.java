@@ -58,7 +58,6 @@ public class ListViewAdapter extends BaseAdapter {
         Glide.with(context)
                 .load(imgAdd)
                 .error(R.mipmap.ic_launcher)
-
                 .into(holder.circleImageView);
         holder.tv_descripe.setText(rowsBean.getArticleTitle());
         holder.tv_name.setText(rowsBean.getName());

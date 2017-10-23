@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class RecommendPresenter extends BasePresenter<RecommendView,RecommendModel> {
     String para = "type=3&Mold=1&Pagesize=10&Pageindex=1";
-    String decode = DESUtils.encrypt(para);
+    String encode = DESUtils.encrypt(para);
     public void getMessage() {
-        OkGo.<String>post(Config.baseUrl + Config.Mothod.find).upString(decode).execute(new StringCallback() {
+        OkGo.<String>post(Config.baseUrl + Config.Mothod.find).upString(encode).execute(new StringCallback() {
             @Override
             public void onSuccess(Response<String> response) {
                 String json = response.body();

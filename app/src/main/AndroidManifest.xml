@@ -43,6 +43,10 @@
         <activity android:name=".ui.main.MainActivity"
                   android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".ui.main.login.LoginActivity"
+                  android:launchMode="singleTask"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>
