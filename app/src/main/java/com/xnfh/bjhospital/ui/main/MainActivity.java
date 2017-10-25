@@ -15,6 +15,7 @@ import com.xnfh.bjhospital.base.BaseActivity;
 import com.xnfh.bjhospital.ui.main.Classify.ClassifyFragment;
 import com.xnfh.bjhospital.ui.main.find.FindFragment;
 import com.xnfh.bjhospital.ui.main.login.LoginActivity;
+import com.xnfh.bjhospital.ui.shake.ShakeActivity;
 import com.xnfh.bjhospital.utils.SharePrefUtil;
 
 import butterknife.BindView;
@@ -89,7 +90,8 @@ public class MainActivity extends BaseActivity {
                 }
                 break;
             case R.id.iv_main_search:       //标题栏搜索按钮
-
+                Intent shakeIntent = new Intent(MainActivity.this, ShakeActivity.class);
+                startActivity(shakeIntent);
                 break;
             case R.id.iv_main_ask:
                 Intent intent= new Intent();
